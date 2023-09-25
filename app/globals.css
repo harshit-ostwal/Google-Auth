@@ -3,25 +3,47 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+    /* Background */
+    --bg-primary: #14131a;
+    --card-primary: #1c1b23;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+    /* ScrollBar */
+    --primary: #14131a;
+    --secondary: cyan;
+    --tertiary: white;
+
+    /* Button */
+    --btn-highlight: rgb(22, 199, 22);
+    --btn-primary: #3a3942;
+    --btn-secondary: #1c1b23;
+
+    /* Text */
+    --text-primary: #8b8a91;
+    --text-secondary: #79787f;
+    --text-info: #4f4f52;
+    --text-highlight: #fff;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    scroll-behavior: smooth;
+    color: var(--foreground-rgb);
+    background: var(--bg-primary);
+}
+
+*::-webkit-scrollbar {
+    width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--primary);
+    border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--secondary);
+    border-radius: 14px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--tertiary);
 }
